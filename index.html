@@ -244,29 +244,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="1、查看项目的提交方式"><a href="#1、查看项目的提交方式" class="headerlink" title="1、查看项目的提交方式"></a>1、查看项目的提交方式</h2><p>git remote -v</p>
+    <h2 id="1、查看项目的提交方式"><a href="#1、查看项目的提交方式" class="headerlink" title="1、查看项目的提交方式"></a>1、查看项目的提交方式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
 <p><img src="/hexo-local/img/git-ssh/git-ssh1.png"></p>
-<h2 id="2、修改提交方式为-ssh"><a href="#2、修改提交方式为-ssh" class="headerlink" title="2、修改提交方式为 ssh"></a>2、修改提交方式为 ssh</h2><p>先移除旧的提交方式：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-
-<p>添加新的提交方式：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@xxx.git</span><br></pre></td></tr></table></figure>
-
-<p>此时还没有权限提交，需要将自己的公钥添加到 github 上。</p>
-<h2 id="3、添加公钥"><a href="#3、添加公钥" class="headerlink" title="3、添加公钥"></a>3、添加公钥</h2><p>第一步，生成公钥，在命令行执行（注意替换自己的邮箱）：</p>
-<p>密码可填可不填，填的话需要大于5位，不能太简单，一般存储普通项目直接回车跳过即可。<br>此时再查看.ssh目录，发现多了两个文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youemail@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>会在自己的家目录生成公钥，之后进入 .ssh 目录：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\User\(自己用户)\.ssh   # Windows</span><br><span class="line">/home/(自己用户)/.ssh  # Linux</span><br></pre></td></tr></table></figure>
-
-<p><img src="/hexo-local/img/git-ssh/git-ssh2.png"></p>
-<p>第二步，添加公钥，打开自己的 Github 网页，打开设置，点击 SSH and GPS keys 选项：</p>
-<p><img src="/hexo-local/img/git-ssh/git-ssh3.png"></p>
-<p>点击 New SSH key ，填写 Title 并拷贝 id_rsa.pub 里边的内容到 Key 中。 </p>
-<p><img src="/hexo-local/img/git-ssh/git-ssh4.png"></p>
-<p>这样就配置成功了，之后在尝试提交验证一下。ok</p>
-
+    
+    <a class="article-more-a" href="/hexo-local/2023/05/27/git-ssh/#more">more >></a>
+    
     
 
     
