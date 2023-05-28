@@ -215,7 +215,7 @@
             
 
   
-    <article id="post-tete" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git-ssh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -223,7 +223,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/hexo-local/2023/05/27/tete/" target="_blank">tete</a>
+	  <a class="article-title" href="/hexo-local/2023/05/27/git-ssh/" target="_blank">Girhub 总是输入密码解决方法</a>
   
     </h1>
   
@@ -231,7 +231,7 @@
 
   
   
-<a href="/hexo-local/2023/05/27/tete/" class="archive-article-date">
+<a href="/hexo-local/2023/05/27/git-ssh/" class="archive-article-date">
         <time datetime="2023-05-27T10:00:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-27</time>
 </a>
 
@@ -244,8 +244,28 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="/hexo-local/images/git-ssh1.png" alt="图 1"></p>
-<p>测试</p>
+    <h2 id="1、查看项目的提交方式"><a href="#1、查看项目的提交方式" class="headerlink" title="1、查看项目的提交方式"></a>1、查看项目的提交方式</h2><p>git remote -v</p>
+<p><img src="/hexo-local/img/git-ssh/git-ssh1.png"></p>
+<h2 id="2、修改提交方式为-ssh"><a href="#2、修改提交方式为-ssh" class="headerlink" title="2、修改提交方式为 ssh"></a>2、修改提交方式为 ssh</h2><p>先移除旧的提交方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+
+<p>添加新的提交方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@xxx.git</span><br></pre></td></tr></table></figure>
+
+<p>此时还没有权限提交，需要将自己的公钥添加到 github 上。</p>
+<h2 id="3、添加公钥"><a href="#3、添加公钥" class="headerlink" title="3、添加公钥"></a>3、添加公钥</h2><p>第一步，生成公钥，在命令行执行（注意替换自己的邮箱）：</p>
+<p>密码可填可不填，填的话需要大于5位，不能太简单，一般存储普通项目直接回车跳过即可。<br>此时再查看.ssh目录，发现多了两个文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youemail@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>会在自己的家目录生成公钥，之后进入 .ssh 目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\User\(自己用户)\.ssh   # Windows</span><br><span class="line">/home/(自己用户)/.ssh  # Linux</span><br></pre></td></tr></table></figure>
+
+<p><img src="/hexo-local/img/git-ssh/git-ssh2.png"></p>
+<p>第二步，添加公钥，打开自己的 Github 网页，打开设置，点击 SSH and GPS keys 选项：</p>
+<p><img src="/hexo-local/img/git-ssh/git-ssh3.png"></p>
+<p>点击 New SSH key ，填写 Title 并拷贝 id_rsa.pub 里边的内容到 Key 中。 </p>
+<p><img src="/hexo-local/img/git-ssh/git-ssh4.png"></p>
+<p>这样就配置成功了，之后在尝试提交验证一下。ok</p>
 
     
 
@@ -261,7 +281,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/hexo-local/2023/05/27/tete/">展开全文 >></a>
+      <a class="article-more-a" href="/hexo-local/2023/05/27/git-ssh/">展开全文 >></a>
     </p>
     
 
@@ -291,7 +311,7 @@
 
 
   
-    <article id="post-Rust oneDay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Rust-oneDay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -299,7 +319,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/hexo-local/2023/05/26/Rust%20oneDay/" target="_blank">初识 Rust</a>
+	  <a class="article-title" href="/hexo-local/2023/05/26/Rust-oneDay/" target="_blank">初识 Rust</a>
   
     </h1>
   
@@ -307,7 +327,7 @@
 
   
   
-<a href="/hexo-local/2023/05/26/Rust%20oneDay/" class="archive-article-date">
+<a href="/hexo-local/2023/05/26/Rust-oneDay/" class="archive-article-date">
         <time datetime="2023-05-26T12:28:05.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-26</time>
 </a>
 
@@ -325,7 +345,7 @@
 <p>优势：在“系统层面”的工作，设计内存管理、并发等底层的细节。在给程序员造成了很大困扰，Rust消除了这些陷阱，更妙的是，它的语言设计的本身自然而言的引导你编写出可靠的代码，并且运行速度和内存使用很高效。</p>
 <h1 id="二、入坑指南"><a href="#二、入坑指南" class="headerlink" title="二、入坑指南"></a>二、入坑指南</h1>
     
-    <a class="article-more-a" href="/hexo-local/2023/05/26/Rust%20oneDay/#more">more >></a>
+    <a class="article-more-a" href="/hexo-local/2023/05/26/Rust-oneDay/#more">more >></a>
     
     
 
@@ -341,7 +361,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/hexo-local/2023/05/26/Rust%20oneDay/">展开全文 >></a>
+      <a class="article-more-a" href="/hexo-local/2023/05/26/Rust-oneDay/">展开全文 >></a>
     </p>
     
 
